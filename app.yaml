@@ -4,6 +4,7 @@ automatic_scaling:
   target_cpu_utilization: 0.95
   target_throughput_utilization: 0.8
   min_pending_latency: 1s
+  max_instances: 5
 env_variables:
   DISABLE_LEGACY_METADATA_SERVER_ENDPOINTS: "true"
 
