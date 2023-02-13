@@ -93,7 +93,7 @@ export class Renderer {
     }
 
     const page = await this.browser.newPage();
-    if (userAgent != null){
+    if (userAgent){
       await page.setUserAgent(userAgent);
     }
     // Page may reload when setting isMobile
