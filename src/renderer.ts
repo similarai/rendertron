@@ -48,7 +48,8 @@ export class Renderer {
   async serialize(
     requestUrl: string,
     isMobile: boolean,
-    timezoneId?: string
+    timezoneId?: string,
+    userAgent?:string,
   ): Promise<SerializedResponse> {
     /**
      * Executed on the page after the page has loaded. Strips script and
@@ -92,7 +93,9 @@ export class Renderer {
     }
 
     const page = await this.browser.newPage();
-
+    if (userAgent != null){
+      await page.setUserAgent(userAgent);
+    }
     // Page may reload when setting isMobile
     // https://github.com/GoogleChrome/puppeteer/blob/v1.10.0/docs/api.md#pagesetviewportviewport
     await page.setViewport({
