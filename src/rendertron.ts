@@ -153,7 +153,8 @@ export class Rendertron {
     const serialized = await this.renderer.serialize(
       url,
       mobileVersion,
-      ctx.query.timezoneId
+      ctx.query.timezoneId,
+      ctx.query.userAgent,
     );
 
     for (const key in this.config.headers) {
